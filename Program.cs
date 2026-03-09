@@ -17,6 +17,11 @@
         
         string[] parts = input.Split(' ');
 
+<<<<<<< HEAD
         Console.WriteLine("Statistics Calculator - Main Version");
+=======
+        Console.WriteLine("Statistics Calculator v1");
+>>>>>>> feature-conflict
     }
+
 }
