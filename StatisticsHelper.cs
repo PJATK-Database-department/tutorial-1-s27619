@@ -24,7 +24,7 @@ public static class StatisticsHelper
     {
         if (values.Length == 0 || values == null)
         {
-            throw new ArgumentException("Array cannot be empty");
+            throw new ArgumentException("Array cannot be empty or null");
         }
         
         return values.Min();
