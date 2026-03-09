@@ -1,7 +1,7 @@
 public static class StatisticsHelper
 {
-    public static double CalculateAverage(double[] numbers)
+    public static double CalculateAverage(int[] values)
     {
-        return numbers.Average();
+        return values.Average();
     }
 }
