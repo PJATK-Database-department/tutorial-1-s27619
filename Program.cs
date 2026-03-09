@@ -2,22 +2,33 @@
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
-
-        Console.WriteLine("Calculator");
+        Console.WriteLine("Statistics Calculator - Main Version");
         Console.WriteLine("Enter numbers separated by space:");
 
-        string input = Console.ReadLine();
-        
+        string? input = Console.ReadLine(); // nullable string
         if (string.IsNullOrWhiteSpace(input))
         {
             Console.WriteLine("Error: No numbers provided.");
             return;
         }
-        
-        string[] parts = input.Split(' ');
 
-        Console.WriteLine("Statistics Calculator - Main Version");
+        // Split the input string and convert each part to int
+        string[] dividedParts = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+        int[] numbers;
+        try
+        {
+            numbers = Array.ConvertAll(dividedParts, int.Parse);
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Error: Please enter only valid integers.");
+            return;
+        }
+
+        Console.WriteLine($"Average: {StatisticsHelper.CalculateAverage(numbers)}");
+        Console.WriteLine($"Max: {StatisticsHelper.CalculateMax(numbers)}");
+        Console.WriteLine($"Min: {StatisticsHelper.CalculateMin(numbers)}");
     }
 
 }
