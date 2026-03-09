@@ -16,5 +16,8 @@
         }
         
         string[] parts = input.Split(' ');
+
+        Console.WriteLine("Statistics Calculator v1");
     }
+
 }
