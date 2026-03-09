@@ -1,0 +1,1 @@
+Added description of statistics functions.
